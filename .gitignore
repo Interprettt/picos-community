@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+build/
+dist/
+
+# Virtualenvs
+venv/
+.venv/
+env/
+
+# Models / weights / voices (downloaded by scripts/setup_models.sh — never commit)
+*.onnx
+*.onnx.json
+*.gguf
+*.bin
+*.pt
+models/
+piper/
+
+# Audio artifacts
+*.wav
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+*.swp

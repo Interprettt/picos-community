@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "picos-community"
+version = "0.1.0"
+description = "PICOS Community Edition — offline EN<->ES legal speech translation (the open-source core)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "GPL-3.0-or-later" }
+authors = [{ name = "David F. Proano Celi", email = "interprettt@gmail.com" }]
+keywords = ["speech-to-text", "translation", "legal", "interpreter", "offline", "whisper", "argos"]
+dependencies = [
+    "numpy",
+    "sounddevice",
+    "faster-whisper",
+    "argostranslate",
+]
+
+[project.urls]
+Homepage = "https://interpretforme.com"
+
+[project.scripts]
+picos-ce = "picos_ce.__main__:main"
+
+[tool.setuptools]
+packages = ["picos_ce"]

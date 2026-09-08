@@ -1,0 +1,36 @@
+# PICOS Community Edition — Python runtime dependencies (CLI-only edition).
+#
+# Install with:  pip install -r requirements.txt
+#
+# These are the project's DIRECT dependencies (the packages picos_ce imports),
+# pinned to the versions verified on the reference machine (Ubuntu 24.04,
+# CPU-only, Python 3.12). Transitive dependencies (ctranslate2, torch,
+# tokenizers, cffi, …) are resolved by pip and are intentionally NOT pinned
+# here.
+#
+# NOT listed on purpose:
+#   * piper-tts / piper1-gpl — the TTS engine is user-opt-in. PICOS CE ships no
+#     TTS engine or voices; install Piper yourself (see the README "Voices"
+#     section) or rely on the espeak-ng fallback.
+#   * nvidia-* / cuda-* / triton — CUDA wheels that torch pulls in on a default
+#     install. This project is CPU-only; install the CPU torch build FIRST to
+#     avoid them:
+#         pip install torch --index-url https://download.pytorch.org/whl/cpu
+#     then run this file. (See the README setup notes.)
+#
+# argostranslate==1.11.0 is intentional, not provisional: a field report
+# initially pointed at downgrading to 1.10.0 (paired with ctranslate2 4.6.2)
+# as a "known-good combination" for an ES->EN degeneration bug. Retested:
+# downgrading argostranslate to 1.10.0 did NOT fix it and additionally broke
+# package loading with a new "Could not load Stanza resources" error;
+# downgrading ctranslate2 alone (to 4.5.0) also did not fix it. Neither
+# library's version was the cause -- see picos_ce/translate.py's
+# _force_stanza_offline() docstring for the actual root cause (Stanza, a
+# transitive dependency, silently re-fetching its resource manifest from the
+# network on every translate call) and its fix. ctranslate2 itself stays
+# unpinned here since it's transitive and its version was ruled out.
+
+numpy==2.5.2
+sounddevice==0.5.5
+faster-whisper==1.2.1
+argostranslate==1.11.0
