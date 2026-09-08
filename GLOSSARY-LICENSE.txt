@@ -1,0 +1,24 @@
+PICOS Community Edition — Starter Glossary: CC0 1.0 Universal
+===============================================================
+
+File: data/glossary_en_es_starter.csv
+
+David F. Proano Celi, the author of the PICOS Community Edition starter
+glossary (English <-> Spanish legal terminology), has dedicated this work
+to the public domain by waiving all of his copyright and related or
+neighboring rights to it, worldwide, under the Creative Commons CC0 1.0
+Universal Public Domain Dedication.
+
+This means you can copy, modify, distribute, and use the glossary, for any
+purpose, including commercially, without asking permission and without
+attribution.
+
+This dedication applies ONLY to the glossary data file named above. The
+PICOS Community Edition source code that reads it is separately licensed
+under the GPL v3 — see the LICENSE file.
+
+Full legal text of the dedication:
+https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+Human-readable summary (not a substitute for the license):
+https://creativecommons.org/publicdomain/zero/1.0/
